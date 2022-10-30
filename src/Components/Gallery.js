@@ -10,7 +10,7 @@ export default function Gallery (props) {
                     <h5 className="box-caption">SOLD OUT</h5>
                 </div>
                 <div className="cardDescription">
-                    <p><img className="card--star" alt="starr" src={star} /><span className="gray">(6) • USA</span></p>
+                    <p><img className="card--star" alt="starr" src={star} /><span className="gray">{props.reviews} ({props.views}) • USA</span></p>
                     <p>{props.p1}</p>
                     <p><span>From ${props.price}</span> / person</p>
                 </div>   
