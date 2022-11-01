@@ -11,12 +11,16 @@ function App() {
     return (
       
         <Gallery 
-          coverImg={dataKey.coverImg}
+          key={dataKey.id} /* Unique key */
+          /* coverImg={dataKey.coverImg}
           location={dataKey.location}
           rating={dataKey.stats.rating}
           reviewCount={dataKey.stats.reviewCount}
           title={dataKey.title}
           price={dataKey.price} 
+          openSpots={dataKey.openSpots} */
+          /* dataKey={dataKey} */ /* dataKey is the object with all of the properties from my Data */
+          {...dataKey} /* Using Spread Syntax ES6 + remove dataKey from Gallery.JS*/
         />
       
       
@@ -27,8 +31,8 @@ function App() {
     <div className="app">
       <Navbar />
       <Hero />
-      <div className="box-grid">
-      {newArr}
+      <div className="box-grid"> {/* Rendering the Gallery Component */}
+        {newArr}
       </div>
     </div>
   )
