@@ -1,38 +1,38 @@
 import './App.css';
+import Data from './Components/Data';
 import Gallery from './Components/Gallery';
 import Hero from './Components/Hero';
 import Navbar from "./Components/Navbar";
 
 
 
-
 function App() {
+  const newArr = Data.map(dataKey => {
+    return (
+      
+        <Gallery 
+          coverImg={dataKey.coverImg}
+          location={dataKey.location}
+          rating={dataKey.stats.rating}
+          reviewCount={dataKey.stats.reviewCount}
+          title={dataKey.title}
+          price={dataKey.price} 
+        />
+      
+      
+    )
+  }) 
+  
   return (
     <div className="app">
       <Navbar />
       <Hero />
       <div className="box-grid">
-        <Gallery 
-          p1="Life lessons with Katie Zaferes"
-          price="136"
-          reviews="5.0"
-          views="6"
-        /> 
-        <Gallery 
-          p1="Learn wedding photography"
-          price="125"
-          reviews="5.0"
-          views="30"
-        />    
-        <Gallery 
-          p1="Group Mountain Biking"
-          price="50"
-          reviews="4.8"
-          views="2"
-        />   
+      {newArr}
       </div>
     </div>
-  );
+  )
+  
 }
 
 export default App;
